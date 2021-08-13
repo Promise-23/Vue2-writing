@@ -1,16 +1,10 @@
 <template>
   <div id="app">
-    <Table />
+    <p @click="$store.commit('add')">counter: {{$store.state.counter}}</p>
+    <p @click="$store.dispatch('add')">async counter: {{$store.state.counter}}</p>
+    <p>double: {{$store.getters.doubleCounter}}</p>
   </div>
 </template>
-<script>
-import Table from './components/antd-vue-test/table01.vue'
-export default {
-  components: {
-    Table
-  }
-}
-</script>
 
 <style>
 #app {

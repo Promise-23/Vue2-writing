@@ -1,50 +1,64 @@
 <template>
-  <a-form>
-    <a-form-item label="日期">
+  <el-form>
+    <el-form-item label="日期">
       <mark
         class="_mark"
         v-show="showSeason"
         @click.stop="showSeason=false"
       ></mark>
-      <a-input placeholder="请选择季度" v-model="showValue" style="width:138px;" @focus="showSeason=true">
-        <a-icon slot="prefix" type="calendar" />
-      </a-input>
-      <a-card
+      <el-input placeholder="请选择季度" v-model="showValue" style="width:138px;" @focus="showSeason=true">
+        <i slot="prefix" class="el-input__icon el-icon-date"></i>
+      </el-input>
+      <el-card
         class="box-card"
         v-show="showSeason"
       >
-        <div class="clearfix yearBtn">
-          <button type="button" @click="prev" title="上一年" class="ant-calendar-month-panel-prev-year-btn"></button>
-          <span role="button" class="a-date-picker__header-label">{{year}}年</span>
-          <button type="button" @click="next" title="下一年" class="ant-calendar-month-panel-next-year-btn"></button>
+        <div slot="header" class="clearfix yearBtn">
+          <button
+            type="button"
+            aria-label="前一年"
+            class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left"
+            @click="prev"
+          ></button>
+          <span role="button" class="el-date-picker__header-label">{{year}}年</span>
+          <button
+            type="button"
+            aria-label="后一年"
+            @click="next"
+            class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-d-arrow-right"
+          ></button>
         </div>
         <div class="text item">
-          <a-button
+          <el-button
             type="text"
+            size="medium"
             class="_left"
             @click="selectSeason(0)"
-          >第一季度</a-button>
-          <a-button
+          >第一季度</el-button>
+          <el-button
             type="text"
+            size="medium"
             class="_right"
             @click="selectSeason(1)"
-          >第二季度</a-button>
+          >第二季度</el-button>
         </div>
         <div class="text item">
-          <a-button
+          <el-button
             type="text"
+            size="medium"
             class="_left"
             @click="selectSeason(2)"
-          >第三季度</a-button>
-          <a-button
+          >第三季度</el-button>
+          <el-button
             type="text"
+            size="medium"
             class="_right"
             @click="selectSeason(3)"
-          >第四季度</a-button>
+          >第四季度</el-button>
         </div>
-      </a-card>
-    </a-form-item>
-  </a-form>
+      </el-card>
+    </el-form-item>
+  </el-form>
 </template>
 <script>
 /**
@@ -145,7 +159,7 @@ export default {
 .text.item {
   text-align: center;
 }
-.text.item >>> .a-button{
+.text.item >>> .el-button{
   width:40%;color: #606266;
 }
 .text.item ._left {
@@ -153,9 +167,6 @@ export default {
 }
 .text.item ._right {
   float: right;
-}
-.ant-calendar-month-panel-prev-year-btn::before{
-  content: "\e6dd";
 }
 </style>
  
