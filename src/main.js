@@ -11,8 +11,8 @@ import { Form, FormItem, Input, Card, Button} from 'element-ui';
 
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
-import router from './router'
-import store from './store'
+// import router from './router'
+// import store from './store'
 
 Vue.use(Form);
 Vue.use(FormItem);
@@ -26,7 +26,7 @@ Vue.use(Antd);
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
+  // router,
+  // store,
   render: h => h(App)
 }).$mount('#app')

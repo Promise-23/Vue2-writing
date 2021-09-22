@@ -1,13 +1,14 @@
 <template>
-  <div id="app">
-    <Table />
-  </div>
+  <echartsBaiduMap />
 </template>
 <script>
-import Table from './components/antd-vue-test/table01.vue'
+// import Table from './components/antd-vue-test/table01.vue'
+// import Map from './components/charts/map.vue'
+// import echartsBaiduMap from './components/charts/echartMigrationMap.vue'
+import echartsBaiduMap from './components/charts/echartsBaiduMap.vue'
 export default {
   components: {
-    Table
+    echartsBaiduMap
   }
 }
 </script>
